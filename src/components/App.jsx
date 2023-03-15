@@ -33,18 +33,6 @@ class App extends Component {
       this.countTotalFeedback();
   }
 
-  // handleClickGoodBtn = () => {
-	// 	this.setState((prevState) => ({ good: prevState.good + 1 }));
-  // };
-
-  // handleClickNeutralBtn = () => {
-  //   this.setState((prevState) => ({ neutral: prevState.neutral + 1 }));
-  // };
-  
-  // handleClickDadBtn = () => {
-	// 	this.setState((prevState) => ({ bad: prevState.bad + 1 }));
-  // };
-
   render() { 
     const { good, neutral, bad } = this.state;
     return (
@@ -54,6 +42,8 @@ class App extends Component {
           options = {Object.keys(this.state)}
           onLeaveFeedback = {this.onLeaveFeedback} 
         />
+      </Section>
+      <Section title = "Statistics">
         <Statistics good={good} neutral={neutral} bad={bad} total={this.countTotalFeedback} positivePercentage={this.countPositiveFeedbackPercentage}/>
       </Section>
     </>
